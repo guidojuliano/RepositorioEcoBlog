@@ -12,7 +12,7 @@ class ModeloBase(models.Model):
         abstract = True
 
 class Categoria(ModeloBase):
-    nombre = models.CharField('Nombre de la Categoria', max_lenght = 100, unique=True)
+    nombre = models.CharField('Nombre de la Categoria', max_length = 100, unique=True)
     imagen_referencial = models.ImageField('Imagen Referencial', upload_to = 'categoria/')
 
     class Meta:
@@ -35,3 +35,22 @@ class Post (ModeloBase):
     imagen_referencial = models.ImageField('Imagen Referencial', upload_to = 'media/', max_length=255)
     publicado = models.BooleanField('Publicado / No Publicado', default=False)
     fecha_publicacion = models.DateField('Fecha de Publicacion')
+
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name = 'Posts'
+    def __str__(self):
+        return self.titulo
+
+class Web(ModeloBase):
+    nosotros = models.TextField('Nosotros')
+
+    def __str__(self):
+        return self.nosotros
+
+class RedesSociales(ModeloBase):
+    instagram = models.URLField('Instagram')
+    linkedin = models.URLField('Linkedin')
+
+    def __str__(self):
+        return self.instagram
