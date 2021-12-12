@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.db.models.fields import TextField
 
 class ModeloBase(models.Model):
     id: models.AutoField(primary_key= True)
@@ -15,10 +16,7 @@ class Categoria(ModeloBase):
     nombre = models.CharField('Nombre de la Categoria', max_length = 100, unique=True)
     imagen_referencial = models.ImageField('Imagen Referencial', upload_to = 'categoria/')
 
-    class Meta:
-        verbose_name = 'Categoria'
-        verbose_name_plural = 'Categorias'
-    
+        
     def __str__(self):
         return self.nombre
 
@@ -33,14 +31,15 @@ class Post (ModeloBase):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     contenido = RichTextField()
     imagen_referencial = models.ImageField('Imagen Referencial', upload_to = 'media/', max_length=255)
-    publicado = models.BooleanField('Publicado / No Publicado', default=False)
+    
     fecha_publicacion = models.DateField('Fecha de Publicacion')
 
-    class Meta:
-        verbose_name = 'Post'
-        verbose_name = 'Posts'
     def __str__(self):
         return self.titulo
+
+class Comentario (ModeloBase):
+    pass
+
 
 class Web(ModeloBase):
     nosotros = models.TextField('Nosotros')

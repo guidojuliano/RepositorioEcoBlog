@@ -6,9 +6,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '+qg+cu1igtna*sb8_pjk@^q#2^ak2m-4+g*333#^i=%6=kak5g'
 
-
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 INSTALLED_APPS = [
+    'apps.usuarios',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -17,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'apps.base',
+    
 ]
 
 MIDDLEWARE = [
