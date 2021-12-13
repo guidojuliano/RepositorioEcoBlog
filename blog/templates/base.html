@@ -19,8 +19,10 @@
         
         <div class="logeo">
             
-            {% if user.is.authenticated %}
-                <p>Bienvenido/a {{user.first_name}}</p>
+            {% if user.is_authenticated %}
+                <p>Welcome 
+                <br>    
+                {{user.username}}</p>
                 <a href="{% url 'logout' %}">CERRAR SESION</a>
             {% else %}
                 <a href="{% url 'login' %}">LOGIN</a>
