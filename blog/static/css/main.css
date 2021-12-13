@@ -1,0 +1,35 @@
+
+
+.menu{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.texto-cont{
+	color: rgb(46, 209, 119);
+    font-family: 'Futura-Normal', arial;
+	font-weight: 1000;
+	font-size: 3em;
+	
+}
+.logeo{
+    font-family: 'Futura-Normal', arial;
+    font-size: 1em;
+
+}
+
+.navbar-menu{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-p{
+    padding: 0px 10px 0px 10px;
+}
+#icono{
+    width: 200px;
+}

@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title></title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link href="https://allfont.es/allfont.css?fonts=futura-normal" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+    <div class="menu">
+        <div class="navbar-menu">
+            <img id="icono" src="../static/img/puticon.png" alt='icono'  class="image-menu"/>
+            <p class='menu-p'>MENU</p>
+        </div>
+        
+        <div class="logeo">
+            
+            {% if user.is.authenticated %}
+                <p>Bienvenido/a {{user.first_name}}</p>
+                <a href="{% url 'logout' %}">CERRAR SESION</a>
+            {% else %}
+                <a href="{% url 'login' %}">LOGIN</a>
+                <a href="">REGISTER</a>
+            {% endif %}
+        </div>
+
+        
+    </div>
+    
+    {% block contenido %}
+
+    {% endblock contenido %}
+</body>
+</html>

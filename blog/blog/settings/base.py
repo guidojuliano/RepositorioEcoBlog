@@ -1,5 +1,5 @@
 import os
-
+from django.urls import reverse_lazy
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -8,7 +8,12 @@ SECRET_KEY = '+qg+cu1igtna*sb8_pjk@^q#2^ak2m-4+g*333#^i=%6=kak5g'
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
+LOGIN_REDIRECT_URL = reverse_lazy('Inicio')
+LOGOUT_REDIRECT_URL = reverse_lazy('login')
+LOGIN_URL = reverse_lazy('login')
+
 INSTALLED_APPS = [
+    'livereload',
     'apps.usuarios',
     'django.contrib.admin',
     'django.contrib.auth',
