@@ -7,13 +7,26 @@
     align-items: center;
 
 }
+.centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .texto-cont{
+    text-align:center;
 	color:  #68c50d ;
     font-family: 'Futura-Normal', arial;
 	font-weight: 1000;
 	font-size: 3em;
 	
+}
+.titulo-principal{
+    color:  #68c50d ;
+    font-family: 'Futura-Normal', arial;
+	font-weight: 1000;
+	font-size: 8em;
+	line-height: 500px;
 }
 .logeo{
     font-family: 'Futura-Normal', arial;
@@ -28,7 +41,18 @@
     align-items: center;
 }
 .menu-p{
-    padding: 0px 10px 0px 10px;
+    text-decoration: none;
+    color:  #68c50d ;
+    font-family: 'Futura-Normal', arial;
+	font-weight: 1000;
+	font-size: 1.5em;
+    padding: 30px 50px 30px ;
+}
+.usuario{
+    font-family: 'Futura-Normal', arial;
+	font-weight: 1000;
+	font-size: 1.5em;
+    text-decoration: none;
 }
 #icono{
     width: 200px;

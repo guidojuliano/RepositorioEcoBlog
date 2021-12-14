@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.db.models.fields import TextField
+from apps.usuarios.models import Usuario
 
 class ModeloBase(models.Model):
     id: models.AutoField(primary_key= True)
@@ -20,26 +21,25 @@ class Categoria(ModeloBase):
     def __str__(self):
         return self.nombre
 
-class Autor(ModeloBase):
-    pass
 
 class Post (ModeloBase):
     titulo = models.CharField('Titulo del Post', max_length=150, unique=True)
     slug = models.CharField('Slug', max_length=150, unique=True)
     descripcion = models.TextField('Descripcion')
-    autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
+    autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     contenido = RichTextField()
     imagen_referencial = models.ImageField('Imagen Referencial', upload_to = 'media/', max_length=255)
-    
     fecha_publicacion = models.DateField('Fecha de Publicacion')
 
     def __str__(self):
         return self.titulo
 
 class Comentario (ModeloBase):
-    pass
-
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    contenido = RichTextField()
+    
 
 class Web(ModeloBase):
     nosotros = models.TextField('Nosotros')

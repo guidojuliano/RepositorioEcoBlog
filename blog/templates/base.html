@@ -4,29 +4,40 @@
 <html lang="en">
 <head>
     
-    <title></title>
+    <title>ECOBLOG</title>
     <link rel="stylesheet" href="../static/css/main.css">
     <link href="https://allfont.es/allfont.css?fonts=futura-normal" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../static/img/puticon.png"> 
 </head>
 <body>
 
 
     <div class="menu">
         <div class="navbar-menu">
-            <img id="icono" src="../static/img/puticon.png" alt='icono'  class="image-menu"/>
-            <p class='menu-p'>MENU</p>
+            <a href="{% url 'Inicio' %}">
+                <img id="icono"  src="../static/img/puticon.png" alt='icono'  class="image-menu" />
+            </a>
+            
+            <p class='menu-p'>
+                <a class="menu-p" href="">POSTEAR</a>
+                
+                <a class="menu-p" href="">TEMAS</a>
+                
+                <a class="menu-p" href="">SOBRE NOSOTROS</a>
+                
+            </p>
         </div>
         
-        <div class="logeo">
+        <div >
             
             {% if user.is_authenticated %}
-                <p>Welcome 
+                <p class="usuario">Welcome 
                 <br>    
                 {{user.username}}</p>
-                <a href="{% url 'logout' %}">CERRAR SESION</a>
+                <a class="usuario" href="{% url 'logout' %}">CERRAR SESION</a>
             {% else %}
                 <a href="{% url 'login' %}">LOGIN</a>
-                <a href="">REGISTER</a>
+                <a href="{% url 'signup' %}">REGISTER</a>
             {% endif %}
         </div>
 

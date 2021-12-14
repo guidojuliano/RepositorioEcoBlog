@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{block contenido}
+
+<div>
+		
+    {% for a in temas %}
+        <p>
+            <b>{{a.nombre}}</b>
+            <img src="{{a.imagen_referencial.url}}">
+        </p>
+
+    {% endfor %}
+    
+</div>
+
+{endblock}

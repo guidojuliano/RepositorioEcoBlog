@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from .models import Categoria
 
-# Create your views here.
+def mostrarCategorias(request):
+    p = Categoria.objects.all()
+    ctx = {}
+    ctx['temas'] = p
+
+    return render(request, 'base/categorias.html', ctx)
