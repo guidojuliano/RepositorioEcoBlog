@@ -1,14 +1,16 @@
-{% extends 'base.html' %}
-
-{% block contenido %}
-            <form method="POST">{%csrf_token%}
-                {{form.errors}}
-                <h3 class="texto-cont">LOGIN</h3>
-                <input type="text" name="username" placeholder="USUARIO">
-                <br>
-                <input type="password" name="password" placeholder="PASSWORD">
-                <br>
-                <input type="submit" name="" placeholder="ENVIAR">
-            </form>
+{% extends 'base.html' %} {% block contenido %}
+<div class="container">
+  <form method="POST">
+    {%csrf_token%} {{form.errors}}
+    <h3 class="texto-cont">LOGIN</h3>
+    <div class="centrado">
+      <input type="text" name="username" placeholder="USUARIO" />
+      <br />
+      <input type="password" name="password" placeholder="PASSWORD" />
+      <br />
+      <input type="submit" name="" placeholder="ENVIAR" />
+    </div>
+  </form>
+</div>
 
 {% endblock contenido %}

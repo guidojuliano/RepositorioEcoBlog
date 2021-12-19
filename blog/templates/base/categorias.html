@@ -1,17 +1,14 @@
-{% extends 'base.html' %}
-
-{block contenido}
+{% extends 'base.html' %} {% block contenido %}
 
 <div>
-		
-    {% for a in temas %}
-        <p>
-            <b>{{a.nombre}}</b>
-            <img src="{{a.imagen_referencial.url}}">
-        </p>
+  {% for a in temas %}
+  <p>
+    <a href="{% url 'base:filtro' a.pk %}">
+      <img class="mediana" src="{{a.imagen_referencial.url}}" />
+    </a>
+  </p>
 
-    {% endfor %}
-    
+  {% endfor %}
 </div>
 
-{endblock}
+{% endblock contenido %}

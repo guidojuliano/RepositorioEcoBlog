@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block contenido %}
+<style>
+  select {
+    display: block !important;
+  }
+</style>
+<div class="container">
+  <form method="POST" enctype="multipart/form-data">
+    {%csrf_token%} {{form.errors}} {{form.as_p}}
+    <input type="submit" name="" value="Postear" />
+  </form>
+</div>
+
+{% endblock contenido %}

@@ -2,50 +2,60 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
+  <head>
     <title>ECOBLOG</title>
-    <link rel="stylesheet" href="../static/css/main.css">
-    <link href="https://allfont.es/allfont.css?fonts=futura-normal" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../static/img/puticon.png"> 
-</head>
-<body>
-
-
-    <div class="menu">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link
+      href="https://allfont.es/allfont.css?fonts=futura-normal"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="icon" href="{% static 'img/puticon.png' %}" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <div>
+      <div id="user-status">
+        {% if user.is_authenticated %}
+        <p class="user">Welcome {{user.username}}</p>
+        <a class="user-logout" href="{% url 'logout' %}">CERRAR SESION</a>
+        {% else %}
+        <a class="user-login" href="{% url 'login' %}">LOGIN</a>
+        <a class="user-signup" href="{% url 'signup' %}">REGISTER</a>
+        {% endif %}
+      </div>
+      <div class="navbar">
         <div class="navbar-menu">
-            <a href="{% url 'Inicio' %}">
-                <img id="icono"  src="../static/img/puticon.png" alt='icono'  class="image-menu" />
-            </a>
-            
-            <p class='menu-p'>
-                <a class="menu-p" href="">POSTEAR</a>
-                
-                <a class="menu-p" href="">TEMAS</a>
-                
-                <a class="menu-p" href="">SOBRE NOSOTROS</a>
-                
-            </p>
-        </div>
-        
-        <div >
-            
-            {% if user.is_authenticated %}
-                <p class="usuario">Welcome 
-                <br>    
-                {{user.username}}</p>
-                <a class="usuario" href="{% url 'logout' %}">CERRAR SESION</a>
-            {% else %}
-                <a href="{% url 'login' %}">LOGIN</a>
-                <a href="{% url 'signup' %}">REGISTER</a>
-            {% endif %}
-        </div>
+          <a href="{% url 'Inicio' %}">
+            <img
+              id="icono"
+              src="{% static 'img/puticon.png' %}"
+              alt="icono"
+              class="image-menu"
+            />
+          </a>
 
-        
+          <p class="menu-p">
+            <a class="menu-p" href="{% url 'base:postear' %}">POSTEAR</a>
+            <a class="menu-p" href="{% url 'base:mostrar_post' %}">POSTS</a>
+            <a class="menu-p" href="{% url 'base:mostrar_categorias' %}"
+              >TEMAS</a
+            >
+
+            <a class="menu-p" href="{% url 'base:mostrar_nosotros' %}"
+              >SOBRE NOSOTROS</a
+            >
+          </p>
+        </div>
+      </div>
     </div>
-    
-    {% block contenido %}
+    {% block contenido %} {% endblock contenido %}
 
-    {% endblock contenido %}
-</body>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
 </html>

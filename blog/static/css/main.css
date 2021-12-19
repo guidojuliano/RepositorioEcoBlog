@@ -1,59 +1,128 @@
+@import "./registro.css";
+/* user font */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap");
 
-
-.menu{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-}
-.centrado{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.texto-cont{
-    text-align:center;
-	color:  #68c50d ;
-    font-family: 'Futura-Normal', arial;
-	font-weight: 1000;
-	font-size: 3em;
-	
-}
-.titulo-principal{
-    color:  #68c50d ;
-    font-family: 'Futura-Normal', arial;
-	font-weight: 1000;
-	font-size: 8em;
-	line-height: 500px;
-}
-.logeo{
-    font-family: 'Futura-Normal', arial;
-    font-size: 1em;
-
+.mediana {
+  width: 200px;
+  height: 200px;
 }
 
-.navbar-menu{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.pequena {
+  width: 50px;
+  height: 50px;
 }
-.menu-p{
-    text-decoration: none;
-    color:  #68c50d ;
-    font-family: 'Futura-Normal', arial;
-	font-weight: 1000;
-	font-size: 1.5em;
-    padding: 30px 50px 30px ;
+.grande {
+  width: 500px;
+  height: 500px;
 }
-.usuario{
-    font-family: 'Futura-Normal', arial;
-	font-weight: 1000;
-	font-size: 1.5em;
-    text-decoration: none;
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-#icono{
-    width: 200px;
+.centrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto-cont {
+  text-align: center;
+  color: #68c50d;
+  font-family: "Futura-Normal", arial;
+  font-weight: 1000;
+  font-size: 3em;
+}
+.titulo-principal {
+  color: #68c50d;
+  font-family: "Futura-Normal", arial;
+  font-weight: 1000;
+  font-size: 8em;
+  line-height: 500px;
+}
+.logeo {
+  font-family: "Futura-Normal", arial;
+  font-size: 1em;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-p,
+.cat-post {
+  text-decoration: none;
+  color: #68c50d;
+  font-family: "Futura-Normal", arial;
+  font-weight: 1000;
+  font-size: 1.5em;
+  padding: 30px 50px 30px;
+}
+.user {
+  font-family: "Baloo Bhaijaan 2", cursive;
+  font-size: 25px;
+  padding-right: 20px;
+  color: #000;
+  margin: 0;
+}
+.user-post,
+.user-logout,
+.user-login,
+.user-signup {
+  text-decoration: none;
+  padding-right: 10px;
+  font-weight: 600;
+  color: rgb(29, 68, 112);
+  font-family: "Futura-Normal", arial;
+  font-size: 25px;
+  transition: all 0.5s ease;
+}
+
+.user-logout:hover,
+.user-login:hover,
+.user-signup:hover,
+.menu-p:hover,
+.navbar-menu:hover {
+  color: rgb(23, 115, 43);
+  transition: all 0.5s ease;
+}
+
+.user-login,
+.user-signup {
+  margin-top: 5px;
+}
+
+#icono {
+  width: 200px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+/* usuario login y registro */
+#user-status {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  justify-content: end;
+  right: 20px;
+  top: 30px;
+  max-height: 100px;
 }

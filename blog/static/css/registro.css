@@ -1,0 +1,8 @@
+.main-register {
+  display: flex;
+  justify-content: center;
+}
+
+.register {
+  width: 40vw;
+}
