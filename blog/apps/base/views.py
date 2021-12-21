@@ -27,10 +27,10 @@ def mostrarPost(request):
 
 def PostCompleto(request, pk):
     post = Post.objects.get(pk = pk)
-    likes = post.cantidad_likes
+    
     ctx = {}
     ctx['complete_post'] = post
-    ctx['likes'] = likes
+    
 
     return render(request, 'base/detallePost.html', ctx)
     
@@ -48,7 +48,11 @@ class Postear(LoginRequiredMixin, CreateView):
     model = 'Post'
     template_name = 'base/postear.html'
     form_class = forms_postear
-    success_url = reverse_lazy('base:mostrar_categorias')
+    success_url = reverse_lazy('base:mostrar_post')
+
+    def form_valid(self, form):
+        form.instance.autor = self.request.user
+        return super().form_valid(form)
 
 @login_required
 def darLike(request, pk):

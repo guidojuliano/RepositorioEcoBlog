@@ -21,6 +21,10 @@ body {
   width: 500px;
   height: 500px;
 }
+.imagenes {
+  width: 1020px;
+  height: 690px;
+}
 .menu {
   display: flex;
   flex-direction: row;
@@ -125,4 +129,39 @@ body {
   right: 20px;
   top: 30px;
   max-height: 100px;
+}
+
+hr {
+  height: 50px;
+  background-color: #68c50d;
+}
+
+.cuadro {
+  box-shadow: 0 0 5px 5px #68c50d;
+}
+
+.area {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.area2 {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.centrado2 {
+  display: flex;
+  justify-content: center;
+}
+
+.texto-cont2 {
+  text-decoration: none;
+  color: #68c50d;
+  font-family: "Futura-Normal", arial;
+  font-weight: 1000;
+  font-size: 2.5em;
+  padding: 30px 50px 30px;
 }

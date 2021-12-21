@@ -25,17 +25,14 @@ class Categoria(ModeloBase):
 
 class Post (ModeloBase):
     titulo = models.CharField('Titulo del Post', max_length=150, unique=True)
-    slug = models.CharField('Slug', max_length=150, unique=True, blank=True)
+    slug = models.CharField('Slug', max_length=150, blank=True)
     descripcion = models.TextField('Descripcion')
     autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     contenido = RichTextField()
     imagen_referencial = models.ImageField('Imagen Referencial', upload_to = 'media/', max_length=255)
-    fecha_publicacion = models.DateField('Fecha de Publicacion', blank=True)
+    fecha_publicacion = models.DateField('Fecha de Publicacion', auto_now = False, auto_now_add=True, blank=True)
     likes = models.ManyToManyField(Usuario, related_name='post_likes', blank=True)
-
-    def cantidad_likes(self):
-        return self.likes.count()
 
     def __str__(self):
         return self.titulo

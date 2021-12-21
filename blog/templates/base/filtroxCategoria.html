@@ -1,33 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block contenido %}
 
-{% block contenido %}
+<div class="area2">
+  <div class="centrado">
+    <p class="texto-cont">{{category.nombre}}</p>
+  </div>
 
-<div class="container"></div>
-
+  {% for a in post %}
+  <a class="cuadro" href="{% url 'base:complete_post' a.pk %}">
     <div class="centrado">
-        <p class='texto_cont'>{{categoria.nombre}}</p>
+      <h1 class="texto-cont2">{{a.titulo}}</h1>
+      <p class="user-post">by {{a.autor}}</p>
+
+      <img class="imagenes" src="{{a.imagen_referencial.url}}" />
     </div>
-		
-    {% for a in posts %}
-    <a href="{% url 'base:complete_post' a.pk %}"><p>
-        <div class="centrado">
-            <h1 class="texto_cont">{{a.titulo}}</h1>
-        </div>
-        <p class="user-post">
-            by {{a.autor}}
-        </p>
-        <p class="cat-post">
-            sobre {{a.categoria}}
-        </p>
-        <p class="post_cont">
-            {{a.descripcion}}
-        </p>
-        <img  src="{{a.imagen_referencial.url}}">
-        </p>
-    </a>
-        
-    {% endfor %}
-    
+  </a>
+
+  {% endfor %}
 </div>
 
 {% endblock contenido %}
